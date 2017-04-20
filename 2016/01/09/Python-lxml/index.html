@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Python lxml
+  
+</title>
+
+<meta name="description" content="在处理word文档的时候找了很多处理docx的库，但大多无法修改文档内容。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python lxml">
+<meta property="og:url" content="http://Andend2017.github.io/2016/01/09/Python-lxml/index.html">
+<meta property="og:site_name" content="小花花">
+<meta property="og:description" content="在处理word文档的时候找了很多处理docx的库，但大多无法修改文档内容。">
+<meta property="og:updated_time" content="2017-04-20T12:20:14.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python lxml">
+<meta name="twitter:description" content="在处理word文档的时候找了很多处理docx的库，但大多无法修改文档内容。">
+
+
+  <link rel="alternative" href="/atom.xml" title="小花花" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/touxiang.jpeg">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">小花花</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">小花花</a></h1>
+    
+      <p class="subtitle">
+        It turns out freedom ain&#39;t nothing but missing you.
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+          <div class="description">初中 北京四中 高中 清华附中</div>
+        
+        
+          <div class="author">廖鑫苑</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/touxiang.jpeg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/应用/">应用</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">7</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cython/">Cython</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frida/">Frida</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Decorator/">Python Decorator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pypy/">pypy</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="主页">主页</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="年份">年份</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/cycling" title="Bike">Bike</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Python-lxml" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Python lxml
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-01-09
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>在处理word文档的时候找了很多处理docx的库，但大多无法修改文档内容。</p>
+<a id="more"></a>
+<p>后来发现office文件都是一个zip包，里面是一些xml配置文件等等。首先想到替换固定的内容来修改word文档，发现问题多多，再就想到使用正则，发现工作量太大。后来发现office套装其实使用的office open xml，就在网上找xml解析教程；不过都是一些从官方文档翻译过来的东西，没啥可用性；踩了很多坑，整理了一个有效且简单的xml解析的教程。</p>
+<h1 id="安装-amp-Install"><a href="#安装-amp-Install" class="headerlink" title="安装&amp;Install"></a>安装&amp;Install</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Windows: https://www.python.org/ <span class="comment"># 下载安装即可.</span></div><div class="line">Linux: sudo apt-get install python</div></pre></td></tr></table></figure>
+<h2 id="lxml"><a href="#lxml" class="headerlink" title="lxml"></a>lxml</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Windows | Linux: python -m pip install lxml.</div></pre></td></tr></table></figure>
+<p>Windows安装lxml可能会出错点击<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml" target="_blank" rel="external">这里</a>下载对应版本的lxml;然后使用下面的命令即可安装:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> python -m pip install lxml-3.6.4-cp35-cp35m-win_amd64.whl</span></div></pre></td></tr></table></figure>
+<h2 id="开始-amp-Start"><a href="#开始-amp-Start" class="headerlink" title="开始&amp;Start"></a>开始&amp;Start</h2><p>解析简单xml文档的教程百度有很多，这里我们解析一个带有命名空间的xml，加入我们有一个office2016的word文档，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">小花花1</div><div class="line">小花花2</div><div class="line">小花花3</div><div class="line">小花花4</div></pre></td></tr></table></figure>
+<p>将docx文件解压，找到/word/document.xml，我们的目标就是它了。</p>
+<h2 id="获取xml树"><a href="#获取xml树" class="headerlink" title="获取xml树"></a>获取xml树</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> lxml.etree <span class="keyword">as</span> etree</div><div class="line"></div><div class="line"><span class="comment"># 获取xml树</span></div><div class="line">tree = etree.parse(<span class="string">"document.xml"</span>)</div><div class="line">print(type(tree))</div><div class="line"></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">lxml</span>.<span class="title">etree</span>.<span class="title">_ElementTree</span>'&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="获取根节点"><a href="#获取根节点" class="headerlink" title="获取根节点"></a>获取根节点</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root = tree.getroot()</div><div class="line">print(root.tag) <span class="comment"># 使用tag获取节点名</span></div><div class="line"></div><div class="line">&gt; &#123;http://schemas.openxmlformats.org/wordprocessingml/<span class="number">2006</span>/main&#125;document</div></pre></td></tr></table></figure>
+<p>这里节点名很长，其实是使用的命名空间，在这个xml文档中{<a href="http://schemas.openxmlformats.org/wordprocessingml/2006/main}就相当于w，上面的输出就相当于w:document" target="_blank" rel="external">http://schemas.openxmlformats.org/wordprocessingml/2006/main}就相当于w，上面的输出就相当于w:document</a></p>
+<h2 id="获取命名空间"><a href="#获取命名空间" class="headerlink" title="获取命名空间"></a>获取命名空间</h2><p>(但是不是全部的,比如自定义的和图片的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">nsmap = root.nsmap</div><div class="line">for ns in nsmap:</div><div class="line">    print(ns,nsmap[ns])</div><div class="line"></div><div class="line">输出：</div><div class="line"></div><div class="line">wne      http://schemas.microsoft.com/office/word/2006/wordml</div><div class="line">wpc      http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas</div><div class="line">wpg      http://schemas.microsoft.com/office/word/2010/wordprocessingGroup</div><div class="line">cx1      http://schemas.microsoft.com/office/drawing/2015/9/8/chartex</div><div class="line">wp14     http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing</div><div class="line">cx2      http://schemas.microsoft.com/office/drawing/2015/10/21/chartex</div><div class="line">w10      urn:schemas-microsoft-com:office:word</div><div class="line">mc       http://schemas.openxmlformats.org/markup-compatibility/2006</div><div class="line">cx       http://schemas.microsoft.com/office/drawing/2014/chartex</div><div class="line">r        http://schemas.openxmlformats.org/officeDocument/2006/relationships</div><div class="line">w        http://schemas.openxmlformats.org/wordprocessingml/2006/main</div><div class="line">wpi      http://schemas.microsoft.com/office/word/2010/wordprocessingInk</div><div class="line">w15      http://schemas.microsoft.com/office/word/2012/wordml</div><div class="line">o        urn:schemas-microsoft-com:office:office</div><div class="line">wp       http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing</div><div class="line">w14      http://schemas.microsoft.com/office/word/2010/wordml</div><div class="line">m        http://schemas.openxmlformats.org/officeDocument/2006/math</div><div class="line">v        urn:schemas-microsoft-com:vml</div><div class="line">wps      http://schemas.microsoft.com/office/word/2010/wordprocessingShape</div><div class="line">w16se    http://schemas.microsoft.com/office/word/2015/wordml/symex</div></pre></td></tr></table></figure>
+<h2 id="使用xpath查找节点"><a href="#使用xpath查找节点" class="headerlink" title="使用xpath查找节点"></a>使用xpath查找节点</h2><p>查找document下的body，因为使用了命名空间所以要用w:body</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># root.xpath()返回一个list</span></div><div class="line">body = root.xpath(<span class="string">"/w:document/w:body"</span>, namespaces=nsmap) <span class="comment"># xpath更多使用方法，可以查看xpath更多资料</span></div><div class="line">print(body)</div><div class="line"></div><div class="line">输出：</div><div class="line"></div><div class="line">[&lt;Element &#123;http://schemas.openxmlformats.org/wordprocessingml/<span class="number">2006</span>/main&#125;body at <span class="number">0x1610fffcb08</span>&gt;]</div></pre></td></tr></table></figure>
+<h2 id="修改节点内容属性等"><a href="#修改节点内容属性等" class="headerlink" title="修改节点内容属性等"></a>修改节点内容属性等</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 节点：ewt = &lt;w:t&gt;丰霸霸babafeng&lt;/w:t&gt;</span></div><div class="line"><span class="comment"># ewt.text的文本是：丰霸霸babafeng</span></div><div class="line"><span class="comment"># 将其修改为1234只需要：</span></div><div class="line">ewt.text = <span class="number">1234</span></div><div class="line"></div><div class="line"><span class="comment"># 节点：ewrFonts = &lt;w:rFonts w:hint="eastAsia" /&gt;&lt;/w:rPr&gt;</span></div><div class="line"><span class="comment"># ewrFonts.attrib[whint]的属性值：eastAsia</span></div><div class="line"><span class="comment"># 将其修改为1234只需要：</span></div><div class="line">whint = <span class="string">"&#123;http://schemas.openxmlformats.org/wordprocessingml/2006/main&#125;rFonts"</span></div><div class="line">ewrFonts.attrib[whint] = <span class="number">1234</span></div></pre></td></tr></table></figure>
+<h2 id="保存修改后的xml文档"><a href="#保存修改后的xml文档" class="headerlink" title="保存修改后的xml文档"></a>保存修改后的xml文档</h2><p>保存文档只需要将etree.tostring(root)保存到一个文本文档里面，后缀为xml即可</p>
+<h2 id="其他常用的方法"><a href="#其他常用的方法" class="headerlink" title="其他常用的方法"></a>其他常用的方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">使用`clear()`清空节点下的子节点</div><div class="line">使用`remove(element)`删除子节点element</div><div class="line">使用`getparent()`获取本节点的父节点</div><div class="line">使用`getprevious()`获取本节点的上一个节点</div><div class="line">使用`getchildren()`获取本加点的子节点(list)</div><div class="line">使用`element.tag`获取节点名</div><div class="line">使用`element.text`获取节点的文本</div><div class="line">使用`element.attrib`获取节点的属性(dict)</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure>
+<h2 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h2><p>help(root)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">Help on _Element object:</div><div class="line">class _Element(builtins.object)</div><div class="line"> |  Element class.</div><div class="line"> |</div><div class="line"> |  References a document object and a libxml node.</div><div class="line"> |</div><div class="line"> |  By pointing to a Document instance, a reference is kept to</div><div class="line"> |  _Document as long as there is some pointer to a node in it.</div><div class="line"> |</div><div class="line"> |  Methods defined here:</div><div class="line"> |</div><div class="line"> |  __bool__(self, /)</div><div class="line"> |      self != 0</div><div class="line"> |</div><div class="line"> |  __contains__(...)</div><div class="line"> |      __contains__(self, element)</div><div class="line"> |</div><div class="line"> |  __copy__(...)</div><div class="line"> |      __copy__(self)</div><div class="line"> |</div><div class="line"> |  __deepcopy__(...)</div><div class="line"> |      __deepcopy__(self, memo)</div><div class="line"> |</div><div class="line"> |  __delitem__(...)</div><div class="line"> |      __delitem__(self, x)</div><div class="line"> |</div><div class="line"> |      Deletes the given subelement or a slice.</div><div class="line"> |</div><div class="line"> |  __getitem__(...)</div><div class="line"> |      Returns the subelement at the given position or the requested</div><div class="line"> |      slice.</div><div class="line"> |</div><div class="line"> |  __iter__(...)</div><div class="line"> |      __iter__(self)</div><div class="line"> |</div><div class="line"> |  __len__(...)</div><div class="line"> |      __len__(self)</div><div class="line"> |</div><div class="line"> |      Returns the number of subelements.</div><div class="line"> ............</div></pre></td></tr></table></figure>
+<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是小花花的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
+<p>The End.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 小花花 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

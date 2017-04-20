@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Python自动截图
+  
+</title>
+
+<meta name="description" content="转载了一个别人的成果(将剪切板的图片保存成bmp文件)，但是已经不知道这是在哪收集的了。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python自动截图">
+<meta property="og:url" content="http://Andend2017.github.io/2016/03/01/Python自动截图/index.html">
+<meta property="og:site_name" content="小花花">
+<meta property="og:description" content="转载了一个别人的成果(将剪切板的图片保存成bmp文件)，但是已经不知道这是在哪收集的了。">
+<meta property="og:updated_time" content="2017-04-20T12:20:13.713Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python自动截图">
+<meta name="twitter:description" content="转载了一个别人的成果(将剪切板的图片保存成bmp文件)，但是已经不知道这是在哪收集的了。">
+
+
+  <link rel="alternative" href="/atom.xml" title="小花花" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/touxiang.jpeg">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">小花花</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">小花花</a></h1>
+    
+      <p class="subtitle">
+        It turns out freedom ain&#39;t nothing but missing you.
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+          <div class="description">初中 北京四中 高中 清华附中</div>
+        
+        
+          <div class="author">廖鑫苑</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/touxiang.jpeg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/应用/">应用</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">7</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cython/">Cython</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frida/">Frida</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Decorator/">Python Decorator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pypy/">pypy</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="主页">主页</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="年份">年份</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/cycling" title="Bike">Bike</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Python自动截图" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Python自动截图
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-03-01
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程/">编程</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>转载了一个别人的成果(将剪切板的图片保存成bmp文件)，但是已经不知道这是在哪收集的了。</p>
+<a id="more"></a>
+<h1 id="环境-amp-Install"><a href="#环境-amp-Install" class="headerlink" title="环境&amp;Install"></a>环境&amp;Install</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Windows <span class="number">10</span> x64</div><div class="line">Python v3<span class="number">.5</span><span class="number">.2</span></div><div class="line">pywin32 v220</div></pre></td></tr></table></figure>
+<h1 id="开始-amp-Start"><a href="#开始-amp-Start" class="headerlink" title="开始&amp;Start"></a>开始&amp;Start</h1><h2 id="获取所有顶层窗口句柄列表"><a href="#获取所有顶层窗口句柄列表" class="headerlink" title="获取所有顶层窗口句柄列表"></a>获取所有顶层窗口句柄列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">top_windows_list</span><span class="params">()</span>:</span></div><div class="line">    hWndList = []</div><div class="line">    win32gui.EnumWindows(<span class="keyword">lambda</span> hWnd, param: param.append(hWnd), hWndList)</div><div class="line">    <span class="keyword">return</span> hWndList</div></pre></td></tr></table></figure>
+<h2 id="将指定的窗口置顶"><a href="#将指定的窗口置顶" class="headerlink" title="将指定的窗口置顶"></a>将指定的窗口置顶</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">top_list = top_windows_list()</div><div class="line"><span class="keyword">for</span> hwnd <span class="keyword">in</span> top_list:</div><div class="line">    text = win32gui.GetWindowText(hwnd)</div><div class="line">    <span class="keyword">if</span> <span class="string">"这里是窗口的标题"</span> <span class="keyword">in</span> text:</div><div class="line">        win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)  <span class="comment"># 强行显示界面后才好截图</span></div><div class="line">        win32gui.SetForegroundWindow(hwnd)  <span class="comment"># 将窗口提到最前</span></div><div class="line">        x, y, w, h = win32gui.GetWindowRect(hwnd)</div><div class="line">        m, n, width, high = win32gui.GetClientRect(hwnd)</div></pre></td></tr></table></figure>
+<h2 id="模拟键盘按键Atl-priScr-截取指定窗口的图了"><a href="#模拟键盘按键Atl-priScr-截取指定窗口的图了" class="headerlink" title="模拟键盘按键Atl+priScr(截取指定窗口的图了)"></a>模拟键盘按键Atl+priScr(截取指定窗口的图了)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">capture</span><span class="params">()</span>:</span></div><div class="line">    <span class="comment"># Atl+priScr(窗口截图)</span></div><div class="line">    sleep(<span class="number">0.5</span>)</div><div class="line">    win32api.keybd_event(<span class="number">0x12</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line">    win32api.keybd_event(<span class="number">0x2c</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</div><div class="line">    win32api.keybd_event(<span class="number">0x2c</span>, <span class="number">0</span>, win32con.KEYEVENTF_KEYUP, <span class="number">0</span>)</div><div class="line">    win32api.keybd_event(<span class="number">0x12</span>, <span class="number">0</span>, win32con.KEYEVENTF_KEYUP, <span class="number">0</span>)</div></pre></td></tr></table></figure>
+<h2 id="将剪切板的图片保存成文件"><a href="#将剪切板的图片保存成文件" class="headerlink" title="将剪切板的图片保存成文件"></a>将剪切板的图片保存成文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BITMAPFILEHEADER</span><span class="params">(ctypes.Structure)</span>:</span></div><div class="line">    _pack_ = <span class="number">1</span>  <span class="comment"># structure field byte alignment</span></div><div class="line">    _fields_ = [</div><div class="line">        (<span class="string">'bfType'</span>, WORD),  <span class="comment"># file type ("BM")</span></div><div class="line">        (<span class="string">'bfSize'</span>, DWORD),  <span class="comment"># file size in bytes</span></div><div class="line">        (<span class="string">'bfReserved1'</span>, WORD),  <span class="comment"># must be zero</span></div><div class="line">        (<span class="string">'bfReserved2'</span>, WORD),  <span class="comment"># must be zero</span></div><div class="line">        (<span class="string">'bfOffBits'</span>, DWORD),  <span class="comment"># byte offset to the pixel array</span></div><div class="line">    ]</div><div class="line">SIZEOF_BITMAPFILEHEADER = ctypes.sizeof(BITMAPFILEHEADER)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">BITMAPINFOHEADER</span><span class="params">(ctypes.Structure)</span>:</span></div><div class="line">    _pack_ = <span class="number">1</span>  <span class="comment"># structure field byte alignment</span></div><div class="line">    _fields_ = [</div><div class="line">        (<span class="string">'biSize'</span>, DWORD),</div><div class="line">        (<span class="string">'biWidth'</span>, LONG),</div><div class="line">        (<span class="string">'biHeight'</span>, LONG),</div><div class="line">        (<span class="string">'biPLanes'</span>, WORD),</div><div class="line">        (<span class="string">'biBitCount'</span>, WORD),</div><div class="line">        (<span class="string">'biCompression'</span>, DWORD),</div><div class="line">        (<span class="string">'biSizeImage'</span>, DWORD),</div><div class="line">        (<span class="string">'biXPelsPerMeter'</span>, LONG),</div><div class="line">        (<span class="string">'biYPelsPerMeter'</span>, LONG),</div><div class="line">        (<span class="string">'biClrUsed'</span>, DWORD),</div><div class="line">        (<span class="string">'biClrImportant'</span>, DWORD)</div><div class="line">    ]</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">key_windows_capture</span><span class="params">(img)</span>:</span></div><div class="line">    <span class="comment"># copy by: http://www.tuicool.com/articles/MFjiUn</span></div><div class="line">    SIZEOF_BITMAPINFOHEADER = ctypes.sizeof(BITMAPINFOHEADER)</div><div class="line">    win32clipboard.OpenClipboard()</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">if</span> win32clipboard.IsClipboardFormatAvailable(win32clipboard.CF_DIB):</div><div class="line">            data = win32clipboard.GetClipboardData(win32clipboard.CF_DIB)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">'E: key_windows_capture clipboard does not contain an image in DIB format'</span>)</div><div class="line">            <span class="comment"># log.error("clipboard does not contain an image in DIB format")</span></div><div class="line">            <span class="comment"># sys.exit(1)</span></div><div class="line">            <span class="keyword">return</span></div><div class="line">    <span class="keyword">finally</span>:</div><div class="line">        win32clipboard.CloseClipboard()</div><div class="line">    bmih = BITMAPINFOHEADER()</div><div class="line">    ctypes.memmove(ctypes.pointer(bmih), data, SIZEOF_BITMAPINFOHEADER)</div><div class="line">    <span class="keyword">if</span> bmih.biCompression != BI_BITFIELDS:  <span class="comment"># RGBA?</span></div><div class="line">        print(<span class="string">'E: key_windows_capture insupported compression type &#123;&#125;'</span>.format(bmih.biCompression))</div><div class="line">        <span class="comment"># log.error('insupported compression type &#123;&#125;'.format(bmih.biCompression))</span></div><div class="line">        <span class="comment"># sys.exit(1)</span></div><div class="line">        <span class="keyword">return</span></div><div class="line">    bmfh = BITMAPFILEHEADER()</div><div class="line">    ctypes.memset(ctypes.pointer(bmfh), <span class="number">0</span>, SIZEOF_BITMAPFILEHEADER)  <span class="comment"># zero structure</span></div><div class="line">    bmfh.bfType = ord(<span class="string">'B'</span>) | (ord(<span class="string">'M'</span>) &lt;&lt; <span class="number">8</span>)</div><div class="line">    bmfh.bfSize = SIZEOF_BITMAPFILEHEADER + len(data)  <span class="comment"># file size</span></div><div class="line">    SIZEOF_COLORTABLE = <span class="number">0</span></div><div class="line">    bmfh.bfOffBits = SIZEOF_BITMAPFILEHEADER + SIZEOF_BITMAPINFOHEADER + SIZEOF_COLORTABLE</div><div class="line">    bmp_filename = img</div><div class="line">    <span class="keyword">with</span> open(bmp_filename, <span class="string">'wb'</span>) <span class="keyword">as</span> bmp_file:</div><div class="line">        bmp_file.write(bmfh)</div><div class="line">        bmp_file.write(data)</div><div class="line">    <span class="comment"># log.info('file "&#123;&#125;" created from clipboard image'.format(bmp_filename))</span></div><div class="line">    <span class="keyword">return</span> bmp_filename</div></pre></td></tr></table></figure>
+<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是小花花的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
+<p>The End.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 小花花 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

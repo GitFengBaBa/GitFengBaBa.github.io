@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Docker学习笔记
+  
+</title>
+
+<meta name="description" content="Docker学习笔记">
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker学习笔记">
+<meta property="og:url" content="http://Andend2017.github.io/2017/03/23/Docker学习笔记/index.html">
+<meta property="og:site_name" content="小花花">
+<meta property="og:description" content="Docker学习笔记">
+<meta property="og:updated_time" content="2017-04-20T12:20:10.444Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker学习笔记">
+<meta name="twitter:description" content="Docker学习笔记">
+
+
+  <link rel="alternative" href="/atom.xml" title="小花花" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/touxiang.jpeg">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">小花花</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">小花花</a></h1>
+    
+      <p class="subtitle">
+        It turns out freedom ain&#39;t nothing but missing you.
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+          <div class="description">初中 北京四中 高中 清华附中</div>
+        
+        
+          <div class="author">廖鑫苑</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/touxiang.jpeg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/应用/">应用</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">7</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cython/">Cython</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frida/">Frida</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Decorator/">Python Decorator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pypy/">pypy</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="主页">主页</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="年份">年份</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/cycling" title="Bike">Bike</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Docker学习笔记" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Docker学习笔记
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2017-03-23
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/应用/">应用</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>Docker学习笔记</p>
+<a id="more"></a>
+<h1 id="简介-amp-Abstract"><a href="#简介-amp-Abstract" class="headerlink" title="简介&amp;Abstract"></a>简介&amp;Abstract</h1><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。</p>
+<h1 id="开始-amp-Start"><a href="#开始-amp-Start" class="headerlink" title="开始&amp;Start"></a>开始&amp;Start</h1><h2 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h2><p>也可以到官网查看相应系统安装方法：<a href="https://www.docker.com" target="_blank" rel="external">https://www.docker.com</a></p>
+<h3 id="ubuntu-16-04-2"><a href="#ubuntu-16-04-2" class="headerlink" title="ubuntu-16.04.2"></a>ubuntu-16.04.2</h3><p><a href="https://docs.docker.com/engine/installation/linux/ubuntu/#install-from-a-package" target="_blank" rel="external">https://docs.docker.com/engine/installation/linux/ubuntu/#install-from-a-package</a></p>
+<h2 id="配置三方镜像地址"><a href="#配置三方镜像地址" class="headerlink" title="配置三方镜像地址"></a>配置三方镜像地址</h2><h3 id="windows-10"><a href="#windows-10" class="headerlink" title="windows-10"></a>windows-10</h3><p>主要是网速慢，配置一个国内的镜像地址相对要快一点，我有win10的机器，所以这里只是win10配置三方镜像地址的方法：</p>
+<ol>
+<li>打开docker设置，前提是我们已经安装好docker了</li>
+<li>找到Daemon，在<code>Registry mirrors</code>下面填：<code>https://pee6w651.mirror.aliyuncs.com</code></li>
+</ol>
+<p>就是这么简单，<code>https://pee6w651.mirror.aliyuncs.com</code>是阿里的docker镜像服务器地址</p>
+<h3 id="ubuntu16-04-2"><a href="#ubuntu16-04-2" class="headerlink" title="ubuntu16.04.2"></a>ubuntu16.04.2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ sudo mkdir -p /etc/docker</div><div class="line">$ sudo tee /etc/docker/daemon.json &lt;&lt;-<span class="string">'EOF'</span></div><div class="line">&#123;</div><div class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://vhm9a6g0.mirror.aliyuncs.com"</span>]</div><div class="line">&#125;</div><div class="line">EOF</div><div class="line">$ sudo systemctl daemon-reload</div><div class="line">$ sudo systemctl restart docker</div></pre></td></tr></table></figure>
+<h2 id="各种问题"><a href="#各种问题" class="headerlink" title="各种问题"></a>各种问题</h2><h3 id="win10共享驱动器失败"><a href="#win10共享驱动器失败" class="headerlink" title="win10共享驱动器失败"></a>win10共享驱动器失败</h3><p>关闭防火墙或者让防火墙信任docker</p>
+<h3 id="不要再windows商用docker"><a href="#不要再windows商用docker" class="headerlink" title="不要再windows商用docker"></a>不要再windows商用docker</h3><p>有一天开始发现不能共享驱动器了，然后我就放弃了</p>
+<h1 id="参考-amp-Reference"><a href="#参考-amp-Reference" class="headerlink" title="参考&amp;Reference"></a>参考&amp;Reference</h1><ol>
+<li>百度百科-docker：<a href="http://baike.baidu.com/item/Docker" target="_blank" rel="external">http://baike.baidu.com/item/Docker</a></li>
+<li>docker：<a href="https://www.docker.com" target="_blank" rel="external">https://www.docker.com</a></li>
+<li>What is Docker：<a href="https://www.docker.com/what-docker" target="_blank" rel="external">https://www.docker.com/what-docker</a></li>
+</ol>
+<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是小花花的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
+<p>The End.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 小花花 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

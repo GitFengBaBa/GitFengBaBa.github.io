@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
+  
+    Apriori算法简介及实现
+  
+</title>
+
+<meta name="description" content="机器学习十大算法之–Apriori">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apriori算法简介及实现">
+<meta property="og:url" content="http://Andend2017.github.io/2016/10/07/Apriori算法简介及实现/index.html">
+<meta property="og:site_name" content="小花花">
+<meta property="og:description" content="机器学习十大算法之–Apriori">
+<meta property="og:updated_time" content="2017-04-20T12:20:09.286Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Apriori算法简介及实现">
+<meta name="twitter:description" content="机器学习十大算法之–Apriori">
+
+
+  <link rel="alternative" href="/atom.xml" title="小花花" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/touxiang.jpeg">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">小花花</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">小花花</a></h1>
+    
+      <p class="subtitle">
+        It turns out freedom ain&#39;t nothing but missing you.
+      </p>
+    
+    <div class="info">
+      <div class="content">
+        
+          <div class="description">初中 北京四中 高中 清华附中</div>
+        
+        
+          <div class="author">廖鑫苑</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/"><img src="/touxiang.jpeg"></a>
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/应用/">应用</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技巧/">技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">7</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cython/">Cython</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frida/">Frida</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Decorator/">Python Decorator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pypy/">pypy</a><span class="tag-list-count">1</span></li></ul>
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/">2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/" title="主页">主页</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/archives" title="年份">年份</a>
+              </li>
+            
+          
+        </ul>
+      
+        <ul class="nav">
+          
+            
+              <li>
+                <a href="/cycling" title="Bike">Bike</a>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Apriori算法简介及实现" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Apriori算法简介及实现
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2016-10-07
+</span>
+
+    
+	<span class="article-category tagcloud">
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+	</span>
+
+
+    
+	<span class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	</span>
+
+
+  </div>
+  <div class="article-entry">
+    <p>机器学习十大算法之–Apriori</p>
+<a id="more"></a>
+<h1 id="简介-amp-Abstract"><a href="#简介-amp-Abstract" class="headerlink" title="简介&amp;Abstract"></a>简介&amp;Abstract</h1><p>Apriori算法是一种挖掘关联规则的频繁项集算法,其核心思想是通过候选集生成和情节的向下封闭检测两个阶段来挖掘频繁项集.而且算法已经被广泛的应用到商业、网络安全等各个领域.</p>
+<h1 id="开始-amp-Start"><a href="#开始-amp-Start" class="headerlink" title="开始&amp;Start"></a>开始&amp;Start</h1><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>该算法的基本思想是：首先找出所有的频集,这些项集出现的频繁性至少和预定义的最小支持度一样.然后由频集产生强关联规则,这些规则必须满足最小支持度和最小可信度.然后使用第1步找到的频集产生期望的规则,产生只包含集合的项的所有规则,其中每一条规则的右部只有一项,这里采用的是中规则的定义.一旦这些规则被生成,那么只有那些大于用户给定的最小可信度的规则才被留下来.为了生成所有频集,使用了递归的方法.</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>有这样一个故事：美国的妇女们经常会嘱咐她们的丈夫下班后为孩子买尿布,而丈夫在买完尿布后又要顺 手买回自己爱喝的啤酒,因此啤酒和尿布在一起被购买的机会很多.这个举措使尿布和啤酒的销量双双增加,并一直为众商家所津津乐道.”尿布和啤酒”：关联规则的一个非常有名的故事.关联规则的是在一个数据集中找出项与项之间的关系,也被称为购物蓝分析.</p>
+<p>提到关联规则,一个概念很重要▬频繁项集：支持度大于等于最小支持度项集.有两个比较重要的度量参数：</p>
+<p>1）、支持度</p>
+<p>支持度是交易集同时包含X和Y的交易数与总交易数|D|之比.<br>support(X⇒Y)=count(X⇒Y)/|D|<br>支持度反映了X、Y同时出现的概率.关联规则的支持度等于频繁集的支持度.</p>
+<p>2）、置信度</p>
+<p>置信度是指包含X和Y的交易数与包含X的交易数之比.即：<br>confidence(X⇒Y)=support(X⇒Y)/support(X)<br>可信度反映了如果交易中包含X,则交易包含Y的概率.一般来说,只有支持度和可信度较高的关联规则才是用户感兴趣的.<br>关联规则寻找频繁项集的Apriori算法,Apriori算法是挖掘布尔型关联规则频繁项集的最为经典、最为基本的算法,该算法需要不断寻找候选集,然后剪枝即去掉包含非频繁子集的候选集,时间复杂度由暴力枚举所有子集的指数级别O(n–2) 降为多项式级别,多项式具体系数是底层实现情况而定 .Apriori算法基于这样的事实：算法使用频繁项集性质的先验知识.Apriori使用一种称作逐层搜索的迭代方法,k-项集用于探索(k+1)-项集.首先,找出频繁1-项集的集合.该集合记作L1.L1用于找频繁2-项集的集合L2,而L2用于找L3,如此下去,直到不能找到频繁k-项集.Ariori算法有两个主要步骤：</p>
+<p>1、连接</p>
+<p>利用已经找到的Lk,通过两两连接得出Ck+1,注意进行连接的Lk[i],Lk[j],必须有k-1个属性值相同,然后另外两个不同的分别分布在Lk[i],Lk[j],这样的求出的Ck+1为Lk+1的候选集.</p>
+<p>2、剪枝</p>
+<p>候选集 Ck+1中的并不都是频繁项集,必须剪枝去掉,越早越好以防止所处理的数据无效项越来越多.只有当子集都是频繁集的候选集才是频繁集,这是剪枝的依据.</p>
+<h2 id="算法例子推算"><a href="#算法例子推算" class="headerlink" title="算法例子推算"></a>算法例子推算</h2><p>上面的描述是不是有点抽象,例子是最能帮助理解的良方.(假设最小支持度为2,最小置信度为0.6,最小支持度和置信度都是人定的,可以根据实验结果的优劣对这两个参数进行调整)<br>我们有初始数据集:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">data = [</div><div class="line">    [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"E"</span>],</div><div class="line">    [<span class="string">"B"</span>, <span class="string">"D"</span>],</div><div class="line">    [<span class="string">"B"</span>, <span class="string">"C"</span>],</div><div class="line">    [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"D"</span>],</div><div class="line">    [<span class="string">"A"</span>, <span class="string">"C"</span>],</div><div class="line">    [<span class="string">"B"</span>, <span class="string">"C"</span>],</div><div class="line">    [<span class="string">"A"</span>, <span class="string">"C"</span>],</div><div class="line">    [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"E"</span>],</div><div class="line">    [<span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>]</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>第一轮候选集和剪枝结果:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">candidate set:</div><div class="line">A:<span class="number">6</span></div><div class="line">B:<span class="number">7</span></div><div class="line">C:<span class="number">6</span></div><div class="line">D:<span class="number">2</span></div><div class="line">E:<span class="number">2</span></div><div class="line">after pruning:</div><div class="line">A:<span class="number">6</span></div><div class="line">B:<span class="number">7</span></div><div class="line">C:<span class="number">6</span></div><div class="line">D:<span class="number">2</span></div><div class="line">E:<span class="number">2</span></div></pre></td></tr></table></figure>
+<p>可以看到,第一轮时,其实就是用的数据集中的项.而因为最小支持度是2的缘故,所以没有被剪枝的,所以得到的频繁集就与候选集相同.</p>
+<p>第二轮的候选集与剪枝结果为:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">candidate set:</div><div class="line">A,B:<span class="number">4</span></div><div class="line">A,C:<span class="number">4</span></div><div class="line">A,D:<span class="number">1</span></div><div class="line">A,E:<span class="number">2</span></div><div class="line">B,C:<span class="number">4</span></div><div class="line">B,D:<span class="number">2</span></div><div class="line">B,E:<span class="number">2</span></div><div class="line">C,D:<span class="number">0</span></div><div class="line">C,E:<span class="number">1</span></div><div class="line">D,E:<span class="number">0</span></div><div class="line">after pruning:</div><div class="line">A,B:<span class="number">4</span></div><div class="line">A,C:<span class="number">4</span></div><div class="line">A,E:<span class="number">2</span></div><div class="line">B,C:<span class="number">4</span></div><div class="line">B,D:<span class="number">2</span></div><div class="line">B,E:<span class="number">2</span></div></pre></td></tr></table></figure>
+<p>可以看到，第二轮的候选集就是第一轮的频繁集自连接得到的（进行了去重），然后根据数据集D计算得到支持度，与最小支持度比较，过滤了一些记录。频繁集已经与候选集不同了。</p>
+<p>第三轮候选集与频繁集结果为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">candidate set:</div><div class="line">A,B,C:<span class="number">2</span></div><div class="line">A,B,E:<span class="number">2</span></div><div class="line">after pruning:</div><div class="line">A,B,C:<span class="number">2</span></div><div class="line">A,B,E:<span class="number">2</span></div></pre></td></tr></table></figure>
+<p>可以看到，第三轮的候选集发生了明显的缩小，这是为什么呢？</p>
+<p>请注意取候选集的两个条件：</p>
+<p>1.两个K项集能够连接的两个条件是，它们有K-1项是相同的。所以，（B，D）和（C，E）这种是不能够进行连接的。缩小了候选集。</p>
+<p>2.如果一个项集是频繁集，那么它不存在不是子集的频繁集。比如（A，B）和（A，D）得到（A，B，D），而（A，B，D）存在子集（A，D）不是频繁集。缩小了候选集。</p>
+<p>第三轮得到的2个候选集，正好支持度等于最小支持度。所以，都算入频繁集。<br>这时再看第四轮的候选集与频繁集结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">candidate set:</div><div class="line">after pruning:</div></pre></td></tr></table></figure>
+<p>可以看到，候选集和频繁集居然为空了！因为通过第三轮得到的频繁集自连接得到{A，B，C，E}，它拥有子集{B,C,E}，而{B,C,E}不是频繁集，不满足：频繁集的子集也是频繁集这一条件，所以被剪枝剪掉了。所以整个算法终止，取最后一次计算得到的频繁集作为最终的频繁集结果：</p>
+<p>也就是：<code>[&#39;A,B,C&#39;, &#39;A,B,E&#39;]</code></p>
+<p>那么，如何得到强规则呢？</p>
+<p>比如对于：A，B，C这个频繁集，我们可以得到它的子集：{A},{B},{C},{A，B},{A，C},{B，C}，那么可以得到的规则如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">A --&gt; C--B 0.333333333333</div><div class="line">B --&gt; A--C 0.285714285714</div><div class="line">C --&gt; A--B 0.333333333333</div><div class="line">A--B --&gt; C 0.5</div><div class="line">A--C --&gt; B 0.5</div><div class="line">B--C --&gt; A 0.5</div></pre></td></tr></table></figure>
+<p>左边是规则，右边是置信度。conf(A –&gt; C–B) = support(A,B,C)/support(A)</p>
+<p>与最小置信度相比较，我们就可以得到强规则了。</p>
+<p>所以对于频繁集[‘A,B,C’, ‘A,B,E’]</p>
+<p>我们得到的规则为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">A - --&gt;  E--B--C 0.16666666666666666</div><div class="line">B - --&gt;  E--A--C 0.14285714285714285</div><div class="line">C - --&gt;  E--B--A 0.16666666666666666</div><div class="line">E - --&gt;  B--A--C 0.5</div><div class="line">A--B - --&gt;  E--C 0.25</div><div class="line">A--C - --&gt;  E--B 0.25</div><div class="line">A--E - --&gt;  B--C 0.5</div><div class="line">B--C - --&gt;  E--A 0.25</div><div class="line">B--E - --&gt;  A--C 0.5</div><div class="line">C--E - --&gt;  A--B 1.0</div><div class="line">A--B--C - --&gt;  E 0.5</div><div class="line">A--B--E - --&gt;  C 0.5</div><div class="line">A--C--E - --&gt;  B 1.0</div><div class="line">B--C--E - --&gt;  A 1.0</div></pre></td></tr></table></figure>
+<p>从而得到强规则为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C--E - --&gt;  A--B : 1.0</div><div class="line">A--C--E - --&gt;  B : 1.0</div><div class="line">B--C--E - --&gt;  A : 1.0</div></pre></td></tr></table></figure>
+<p>意味着如果用户买了商品E，则极有可能买商品A，B;买了A和E，则极有可能买B，如果买了B，E，则极有可能买A。所以，你就知道在页面上该如何推荐了。</p>
+<h1 id="参考-amp-Reference"><a href="#参考-amp-Reference" class="headerlink" title="参考&amp;Reference"></a>参考&amp;Reference</h1><p>thub.com/BaBaFeng/Apriori</p>
+<ol>
+<li>参考代码：<a href="https://gi" target="_blank" rel="external">https://gi</a></li>
+</ol>
+<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是小花花的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
+<p>The End.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 小花花 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
