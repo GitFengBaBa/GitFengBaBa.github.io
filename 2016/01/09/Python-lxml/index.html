@@ -17,7 +17,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python lxml">
 <meta property="og:url" content="http://Andend2017.github.io/2016/01/09/Python-lxml/index.html">
-<meta property="og:site_name" content="小花花">
+<meta property="og:site_name" content="廖鑫苑">
 <meta property="og:description" content="在处理word文档的时候找了很多处理docx的库，但大多无法修改文档内容。">
 <meta property="og:updated_time" content="2017-04-20T12:20:14.415Z">
 <meta name="twitter:card" content="summary">
@@ -25,7 +25,7 @@
 <meta name="twitter:description" content="在处理word文档的时候找了很多处理docx的库，但大多无法修改文档内容。">
 
 
-  <link rel="alternative" href="/atom.xml" title="小花花" type="application/atom+xml">
+  <link rel="alternative" href="/atom.xml" title="廖鑫苑" type="application/atom+xml">
 
 
 
@@ -52,13 +52,13 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="title" href="/">小花花</a>
+  <a class="title" href="/">廖鑫苑</a>
 </div>
 
   <div class="main-container">
     <div class="sidebar">
   <div class="header">
-    <h1 class="title"><a href="/">小花花</a></h1>
+    <h1 class="title"><a href="/">廖鑫苑</a></h1>
     
       <p class="subtitle">
         It turns out freedom ain&#39;t nothing but missing you.
@@ -179,7 +179,7 @@
 <p>Windows安装lxml可能会出错点击<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml" target="_blank" rel="external">这里</a>下载对应版本的lxml;然后使用下面的命令即可安装:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> python -m pip install lxml-3.6.4-cp35-cp35m-win_amd64.whl</span></div></pre></td></tr></table></figure>
 <h2 id="开始-amp-Start"><a href="#开始-amp-Start" class="headerlink" title="开始&amp;Start"></a>开始&amp;Start</h2><p>解析简单xml文档的教程百度有很多，这里我们解析一个带有命名空间的xml，加入我们有一个office2016的word文档，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">小花花1</div><div class="line">小花花2</div><div class="line">小花花3</div><div class="line">小花花4</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">廖鑫苑1</div><div class="line">廖鑫苑2</div><div class="line">廖鑫苑3</div><div class="line">廖鑫苑4</div></pre></td></tr></table></figure>
 <p>将docx文件解压，找到/word/document.xml，我们的目标就是它了。</p>
 <h2 id="获取xml树"><a href="#获取xml树" class="headerlink" title="获取xml树"></a>获取xml树</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> lxml.etree <span class="keyword">as</span> etree</div><div class="line"></div><div class="line"><span class="comment"># 获取xml树</span></div><div class="line">tree = etree.parse(<span class="string">"document.xml"</span>)</div><div class="line">print(type(tree))</div><div class="line"></div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">lxml</span>.<span class="title">etree</span>.<span class="title">_ElementTree</span>'&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="获取根节点"><a href="#获取根节点" class="headerlink" title="获取根节点"></a>获取根节点</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root = tree.getroot()</div><div class="line">print(root.tag) <span class="comment"># 使用tag获取节点名</span></div><div class="line"></div><div class="line">&gt; &#123;http://schemas.openxmlformats.org/wordprocessingml/<span class="number">2006</span>/main&#125;document</div></pre></td></tr></table></figure>
@@ -193,7 +193,7 @@
 <h2 id="其他常用的方法"><a href="#其他常用的方法" class="headerlink" title="其他常用的方法"></a>其他常用的方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">使用`clear()`清空节点下的子节点</div><div class="line">使用`remove(element)`删除子节点element</div><div class="line">使用`getparent()`获取本节点的父节点</div><div class="line">使用`getprevious()`获取本节点的上一个节点</div><div class="line">使用`getchildren()`获取本加点的子节点(list)</div><div class="line">使用`element.tag`获取节点名</div><div class="line">使用`element.text`获取节点的文本</div><div class="line">使用`element.attrib`获取节点的属性(dict)</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure>
 <h2 id="查看帮助"><a href="#查看帮助" class="headerlink" title="查看帮助"></a>查看帮助</h2><p>help(root)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">Help on _Element object:</div><div class="line">class _Element(builtins.object)</div><div class="line"> |  Element class.</div><div class="line"> |</div><div class="line"> |  References a document object and a libxml node.</div><div class="line"> |</div><div class="line"> |  By pointing to a Document instance, a reference is kept to</div><div class="line"> |  _Document as long as there is some pointer to a node in it.</div><div class="line"> |</div><div class="line"> |  Methods defined here:</div><div class="line"> |</div><div class="line"> |  __bool__(self, /)</div><div class="line"> |      self != 0</div><div class="line"> |</div><div class="line"> |  __contains__(...)</div><div class="line"> |      __contains__(self, element)</div><div class="line"> |</div><div class="line"> |  __copy__(...)</div><div class="line"> |      __copy__(self)</div><div class="line"> |</div><div class="line"> |  __deepcopy__(...)</div><div class="line"> |      __deepcopy__(self, memo)</div><div class="line"> |</div><div class="line"> |  __delitem__(...)</div><div class="line"> |      __delitem__(self, x)</div><div class="line"> |</div><div class="line"> |      Deletes the given subelement or a slice.</div><div class="line"> |</div><div class="line"> |  __getitem__(...)</div><div class="line"> |      Returns the subelement at the given position or the requested</div><div class="line"> |      slice.</div><div class="line"> |</div><div class="line"> |  __iter__(...)</div><div class="line"> |      __iter__(self)</div><div class="line"> |</div><div class="line"> |  __len__(...)</div><div class="line"> |      __len__(self)</div><div class="line"> |</div><div class="line"> |      Returns the number of subelements.</div><div class="line"> ............</div></pre></td></tr></table></figure>
-<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是小花花的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
+<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是廖鑫苑的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
 <p>The End.</p>
 
   </div>
@@ -213,7 +213,7 @@
 
           <div class="main-footer">
   
-    © 2017 小花花 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    © 2017 廖鑫苑 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
   
 </div>
 

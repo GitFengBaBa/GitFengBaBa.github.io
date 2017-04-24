@@ -17,7 +17,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python zipfile">
 <meta property="og:url" content="http://Andend2017.github.io/2015/09/01/Python-zipfile/index.html">
-<meta property="og:site_name" content="小花花">
+<meta property="og:site_name" content="廖鑫苑">
 <meta property="og:description" content="整理了一下Python原生库zipfile处理zip压缩包的方法,和遇到的坑">
 <meta property="og:updated_time" content="2017-04-20T12:20:14.796Z">
 <meta name="twitter:card" content="summary">
@@ -25,7 +25,7 @@
 <meta name="twitter:description" content="整理了一下Python原生库zipfile处理zip压缩包的方法,和遇到的坑">
 
 
-  <link rel="alternative" href="/atom.xml" title="小花花" type="application/atom+xml">
+  <link rel="alternative" href="/atom.xml" title="廖鑫苑" type="application/atom+xml">
 
 
 
@@ -52,13 +52,13 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="title" href="/">小花花</a>
+  <a class="title" href="/">廖鑫苑</a>
 </div>
 
   <div class="main-container">
     <div class="sidebar">
   <div class="header">
-    <h1 class="title"><a href="/">小花花</a></h1>
+    <h1 class="title"><a href="/">廖鑫苑</a></h1>
     
       <p class="subtitle">
         It turns out freedom ain&#39;t nothing but missing you.
@@ -183,7 +183,7 @@
 <p>ZipFile()的属性有下面这些:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">|  close(self)</div><div class="line">|      Close the file, and for mode 'w', 'x' and 'a' write the ending</div><div class="line">|      records.</div><div class="line">|</div><div class="line">|  extract(self, member, path=None, pwd=None)</div><div class="line">|      Extract a member from the archive to the current working directory,</div><div class="line">|      using its full name. Its file information is extracted as accurately</div><div class="line">|      as possible. `member' may be a filename or a ZipInfo object. You can</div><div class="line">|      specify a different directory using `path'.</div><div class="line">|</div><div class="line">|  extractall(self, path=None, members=None, pwd=None)</div><div class="line">|      Extract all members from the archive to the current working</div><div class="line">|      directory. `path' specifies a different directory to extract to.</div><div class="line">|      `members' is optional and must be a subset of the list returned</div><div class="line">|      by namelist().</div><div class="line">|</div><div class="line">|  getinfo(self, name)</div><div class="line">|      Return the instance of ZipInfo given 'name'.</div><div class="line">|</div><div class="line">|  infolist(self)</div><div class="line">|      Return a list of class ZipInfo instances for files in the</div><div class="line">|      archive.</div><div class="line">|</div><div class="line">|  namelist(self)</div><div class="line">|      Return a list of file names in the archive.</div><div class="line">|</div><div class="line">|  open(self, name, mode='r', pwd=None)</div><div class="line">|      Return file-like object for 'name'.</div><div class="line">|</div><div class="line">|  printdir(self, file=None)</div><div class="line">|      Print a table of contents for the zip file.</div><div class="line">|</div><div class="line">|  read(self, name, pwd=None)</div><div class="line">|      Return file bytes (as a string) for name.</div><div class="line">|</div><div class="line">|  setpassword(self, pwd)</div><div class="line">|      Set default password for encrypted files.</div><div class="line">|</div><div class="line">|  testzip(self)</div><div class="line">|      Read all the files and check the CRC.</div><div class="line">|</div><div class="line">|  write(self, filename, arcname=None, compress_type=None)</div><div class="line">|      Put the bytes from filename into the archive under the name</div><div class="line">|      arcname.</div><div class="line">|</div><div class="line">|  writestr(self, zinfo_or_arcname, data, compress_type=None)</div><div class="line">|      Write a file into the archive.  The contents is 'data', which</div><div class="line">|      may be either a 'str' or a 'bytes' instance; if it is a 'str',</div><div class="line">|      it is encoded as UTF-8 first.</div><div class="line">|      'zinfo_or_arcname' is either a ZipInfo instance or</div><div class="line">|      the name of the file in the archive.</div></pre></td></tr></table></figure>
 <h1 id="坑-amp-Cheating"><a href="#坑-amp-Cheating" class="headerlink" title="坑&amp;Cheating"></a>坑&amp;Cheating</h1><p>坑: Python2的时候windows上zip的路径不能是utf8编码的中文,不过gbk编码是可以的,Python3以后就没遇到啥问题了</p>
-<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是小花花的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
+<h1 id="结尾-amp-END"><a href="#结尾-amp-END" class="headerlink" title="结尾&amp;END"></a>结尾&amp;END</h1><p>文章仅仅记录的是廖鑫苑的学习笔记，感谢<code>参考</code>章节中链接的作者或博主，如有不妥联系QQ：<code>2021414177</code> 邮箱：<code>whwhlh@163.com</code></p>
 <p>The End.</p>
 
   </div>
@@ -203,7 +203,7 @@
 
           <div class="main-footer">
   
-    © 2017 小花花 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    © 2017 廖鑫苑 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
   
 </div>
 
